@@ -125,8 +125,8 @@ DATE=$(TZ=Asia/Jakarta date +"%Y%m%d-%T")
 
  clone() {
 	echo " "
-	msg "|| Cloning Clang-12 ||"
-	git clone --depth=1 https://github.com/AnggaR96s/GengKapak-clang proton --no-tags
+	msg "|| Cloning Clang-13 ||"
+	git clone --depth=1 https://github.com/kdrag0n/proton-clang proton --no-tags
 		# Toolchain Directory defaults to clang-llvm
 	TC_DIR=$KERNEL_DIR/proton
 
