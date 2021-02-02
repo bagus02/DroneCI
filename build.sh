@@ -126,7 +126,7 @@ DATE=$(TZ=Asia/Jakarta date +"%Y%m%d-%T")
  clone() {
 	echo " "
 	msg "|| Cloning Clang-13 ||"
-	git clone --depth=1 https://github.com/kdrag0n/proton-clang proton --no-tags
+	git clone --depth=1 https://git.rip/ga/GengKapak-clang proton --no-tags
 		# Toolchain Directory defaults to clang-llvm
 	TC_DIR=$KERNEL_DIR/proton
 
@@ -244,13 +244,13 @@ gen_zip() {
 		mv "$KERNEL_DIR"/out/arch/arm64/boot/dtbo.img AnyKernel3/dtbo.img
 	fi
 	cd AnyKernel3 || exit
-	zip -r9 $ZIPNAME-$DEVICE-"$DATE" * -x .git README.md
+	zip -r9 $ZIPNAME-$DEVICE-"$DATE" * -x .git README.md LICENSE
 
 	## Prepare a final zip variable
 	ZIP_FINAL="$ZIPNAME-$DEVICE-$DATE.zip"
 	if [ "$PTTG" = 1 ]
  	then
-		tg_post_build "$ZIP_FINAL" "$CHATID" "✅ Build took : $((DIFF / 60)) minute(s) and $((DIFF % 60)) second(s)"
+		tg_post_build "$ZIP_FINAL" "$CHATID" "✅ Build took : $((DIFF / 60)) minute(s) and $((DIFF % 60)) second(s)"%0A"<b>ChangeLog : </b>$COMMIT_HEAD"
 	fi
 	cd ..
 }
